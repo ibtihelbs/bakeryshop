@@ -6,7 +6,7 @@ const Hero = () => {
     <section>
       <div
         style={{
-          backgroundImage: "url(./hero_mini.avif)",
+          backgroundImage: "url(./hero_mini.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "500px",
