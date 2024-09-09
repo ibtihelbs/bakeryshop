@@ -27,10 +27,10 @@ const Contact = () => {
   if (!bakery) return <div>Loading...</div>;
 
   return (
-    <section className="grid gap-2 justify-center ">
+    <section className="grid gap-4 justify-center py-8 px-4">
       <H1 content={"Contact Information"} />
 
-      <div className="m-auto p-4 border-[1px] w-[400px] border-black border-solid rounded-lg mb-4">
+      <div className="m-auto p-4 border-[1px] max-w-[400px] border-black border-solid rounded-lg mb-4">
         <p>
           <strong>Location:</strong> {bakery.location}
         </p>
@@ -43,12 +43,13 @@ const Contact = () => {
         <p>
           <strong>Follow us on:</strong>
         </p>
-        <ul className="flex justify-between ">
+        <ul className="flex justify-between mt-2">
           <li>
             <a
               href={bakery.contact.social_media.instagram}
               target="_blank"
               rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
             >
               Instagram
             </a>
@@ -58,6 +59,7 @@ const Contact = () => {
               href={bakery.contact.social_media.facebook}
               target="_blank"
               rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
             >
               Facebook
             </a>
