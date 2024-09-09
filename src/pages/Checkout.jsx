@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addInfo } from "../store/userSlice";
 import { clearCart } from "../store/cartSlice";
 import { useNavigate } from "react-router-dom";
-import Button from "../components/Button";
+import Button from "../componants/Button";
 
 const Checkout = () => {
   const dispatch = useDispatch();
