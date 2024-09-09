@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addInfo } from "../store/userSlice";
+import { clearCart  } from "../store/cartSlice";
 import Button from "../componants/Button";
 const Checkout = () => {
   const dispatch = useDispatch();
