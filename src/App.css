@@ -1,6 +1,10 @@
+@font-face {
+  font-family: "Yeseva One";
+  src: url(./assets/fonts/yesevaone-regular-webfont.woff);
+}
 body {
   font-family: system-ui, sans-serif;
-}/*
+}
 h1,
 h2,
 h3,
@@ -9,4 +13,3 @@ h5,
 h6 {
   font-family: "Yeseva One", serif;
 }
-*/
