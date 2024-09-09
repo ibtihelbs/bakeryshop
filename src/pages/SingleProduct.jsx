@@ -6,7 +6,7 @@ const SingleProduct = () => {
   const id = useParams().id - 1;
   const [products, setProducts] = useState({});
   const getProducts = async () => {
-    const res = await axios.get(`http://localhost:3000/bakery`);
+    const res = await axios.get(`data.json/bakery`);
     setProducts(res.data.products[id]);
   };
   useEffect(() => {
@@ -24,7 +24,7 @@ const SingleProduct = () => {
         <p className="max-w-72"> {products.description} </p>
         <div className="flex justify-between w-[500px]">
           <h2> {products.price} </h2>
-         <AddCart v={products} />
+          <AddCart v={products} />
         </div>
       </div>
     </div>

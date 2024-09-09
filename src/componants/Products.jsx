@@ -27,7 +27,7 @@ const Products = ({ start, end }) => {
   const itemsPerPage = 6;
 
   const getProducts = async () => {
-    const res = await axios.get("http://localhost:3000/bakery");
+    const res = await axios.get("data.json/bakery");
     setProducts(res.data.products);
   };
 
