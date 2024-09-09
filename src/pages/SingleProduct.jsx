@@ -6,8 +6,8 @@ const SingleProduct = () => {
   const id = useParams().id - 1;
   const [products, setProducts] = useState({});
   const getProducts = async () => {
-    const res = await axios.get(`data.json/bakery`);
-    setProducts(res.data.products[id]);
+    const res = await axios.get(`./data.json`);
+    setProducts(res.data.bakery.products[id]);
   };
   useEffect(() => {
     getProducts();

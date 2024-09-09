@@ -27,8 +27,12 @@ const Products = ({ start, end }) => {
   const itemsPerPage = 6;
 
   const getProducts = async () => {
-    const res = await axios.get("data.json/bakery");
-    setProducts(res.data.products);
+    try {
+      const res = await axios.get("./data.json");
+      setProducts(res.data.bakery.products);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -46,7 +50,7 @@ const Products = ({ start, end }) => {
   return (
     <>
       <div className="grid md:grid-cols-3 grid-cols-1 px-10 gap-5">
-        {products.length > 0 ? (
+        {products?.length > 0 ? (
           products
             .slice(start, end)
             .map((v) => <Singleproduct key={v.id} prod={v} />)
