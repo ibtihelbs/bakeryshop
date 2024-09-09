@@ -27,7 +27,7 @@ const Contact = () => {
   if (!bakery) return <div>Loading...</div>;
 
   return (
-    <>
+    <section className="grid gap-2 justify-center ">
       <H1 content={"Contact Information"} />
 
       <div className="m-auto p-4 border-[1px] w-[400px] border-black border-solid rounded-lg mb-4">
@@ -64,7 +64,7 @@ const Contact = () => {
           </li>
         </ul>
       </div>
-    </>
+    </section>
   );
 };
 

@@ -3,37 +3,35 @@ import { useDispatch, useSelector } from "react-redux";
 import { addInfo } from "../store/userSlice";
 import { clearCart } from "../store/cartSlice";
 import { useNavigate } from "react-router-dom";
-import Button from "../componants/Button";
+import Button from "../components/Button";
 
 const Checkout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const userInfoFn = (Info) => {
-    // Retrieve the current array from localStorage or initialize an empty array if it doesn't exist
-    const userInfoRead = JSON.parse(localStorage.getItem("userInfo")) || [];
 
-    // Check if the Info object already exists in the array
-    const findIndex = userInfoRead.findIndex(
-      (v) => v.fullName === Info.fullName && v.address === Info.address
+  const saveUserInfo = (info) => {
+    const savedUserInfo = JSON.parse(localStorage.getItem("userInfo")) || [];
+    const userIndex = savedUserInfo.findIndex(
+      (user) => user.fullName === info.fullName && user.address === info.address
     );
 
-    if (findIndex === -1) {
-      // If the object doesn't exist, add it to the array
-      userInfoRead.push(Info);
+    if (userIndex === -1) {
+      savedUserInfo.push(info);
     } else {
-      // Optionally update the existing entry (this depends on your needs)
-      userInfoRead[findIndex] = Info;
+      savedUserInfo[userIndex] = info;
     }
 
-    // Save the updated array back to localStorage
-    localStorage.setItem("userInfo", JSON.stringify(userInfoRead));
+    localStorage.setItem("userInfo", JSON.stringify(savedUserInfo));
   };
-  const summeryOrderFn = (Info) => {
-    const order = JSON.parse(localStorage.getItem("orders")) || [];
-    order.push(Info);
-    const orderAt = new Date().getDate;
-    localStorage.setItem("orders", JSON.stringify({ ...order, orderAt }));
+
+  const saveOrderSummary = (orderInfo) => {
+    const orders = JSON.parse(localStorage.getItem("orders")) || [];
+    const orderDate = new Date().toISOString();
+
+    orders.push({ orderDate, ...orderInfo });
+    localStorage.setItem("orders", JSON.stringify(orders));
   };
+
   const orderSummary = useSelector((state) => state.cartReducer.orderSummary);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -48,31 +46,30 @@ const Checkout = () => {
   const [errors, setErrors] = useState({});
   const [confirmationMessage, setConfirmationMessage] = useState("");
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const validateForm = () => {
-    const newErrors = {};
-    for (const key in formData) {
+    const validationErrors = {};
+    Object.keys(formData).forEach((key) => {
       if (!formData[key]) {
-        newErrors[key] = `${key.replace(/([A-Z])/g, " $1")} is required`;
+        validationErrors[key] = `${key.replace(/([A-Z])/g, " $1")} is required`;
       }
-    }
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    });
+    setErrors(validationErrors);
+    return Object.keys(validationErrors).length === 0;
   };
+
   const handlePlaceOrder = (e) => {
     e.preventDefault();
 
     if (validateForm()) {
       dispatch(addInfo(formData));
-      userInfoFn(formData);
-      summeryOrderFn(orderSummary);
+      saveUserInfo(formData);
+      saveOrderSummary(orderSummary);
+
       setFormData({
         fullName: "",
         address: "",
@@ -82,11 +79,16 @@ const Checkout = () => {
         expiryDate: "",
         cvv: "",
       });
-      setConfirmationMessage("Order placed successfully!");
-      dispatch(clearCart()); // Clear the cart after placing the order
+
+      setConfirmationMessage(
+        "Hope you enjoyed the trip! We're sorry to inform you that we won't be sending your pastries. Your doctor isn't thrilled with your lifestyle choices and keeps calling us daily."
+      );
+
+      dispatch(clearCart());
+
       setTimeout(() => {
-        navigate("/"); // Redirect to home or another page
-      }, 2000); // 2-second delay before redirecting
+        navigate("/");
+      }, 2000);
     }
   };
 
@@ -95,10 +97,10 @@ const Checkout = () => {
       <div className="w-full max-w-md">
         <form
           onSubmit={handlePlaceOrder}
-          className="bg-white border-solid border-black border-[1px] rounded-lg px-8 pt-6 pb-8 mb-4"
+          className="bg-white border border-black rounded-lg px-8 pt-6 pb-8 mb-4"
         >
           <h2 className="text-center text-2xl font-bold mb-4">Checkout</h2>
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-4">
             <div>
               <div className="mb-4">
                 <label
@@ -113,8 +115,8 @@ const Checkout = () => {
                   name="fullName"
                   placeholder="Full Name"
                   value={formData.fullName}
-                  onChange={handleChange}
-                  className="border-solid border-black border-[1px] appearance-none rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  onChange={handleInputChange}
+                  className="border border-black rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
                 />
                 {errors.fullName && (
@@ -137,8 +139,8 @@ const Checkout = () => {
                   name="address"
                   placeholder="Address"
                   value={formData.address}
-                  onChange={handleChange}
-                  className="border-solid border-black border-[1px] appearance-none rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  onChange={handleInputChange}
+                  className="border border-black rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
                 />
                 {errors.address && (
@@ -159,8 +161,8 @@ const Checkout = () => {
                   name="city"
                   placeholder="City"
                   value={formData.city}
-                  onChange={handleChange}
-                  className="border-solid border-black border-[1px] appearance-none rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  onChange={handleInputChange}
+                  className="border border-black rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
                 />
                 {errors.city && (
@@ -181,8 +183,8 @@ const Checkout = () => {
                   name="postalCode"
                   placeholder="Postal Code"
                   value={formData.postalCode}
-                  onChange={handleChange}
-                  className="border-solid border-black border-[1px] appearance-none rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  onChange={handleInputChange}
+                  className="border border-black rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
                 />
                 {errors.postalCode && (
@@ -192,6 +194,7 @@ const Checkout = () => {
                 )}
               </div>
             </div>
+
             <div>
               <div className="mb-4">
                 <label
@@ -206,8 +209,8 @@ const Checkout = () => {
                   name="cardNumber"
                   placeholder="Card Number"
                   value={formData.cardNumber}
-                  onChange={handleChange}
-                  className="border-solid border-black border-[1px] appearance-none rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  onChange={handleInputChange}
+                  className="border border-black rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
                 />
                 {errors.cardNumber && (
@@ -230,8 +233,8 @@ const Checkout = () => {
                   name="expiryDate"
                   placeholder="MM/YY"
                   value={formData.expiryDate}
-                  onChange={handleChange}
-                  className="border-solid border-black border-[1px] appearance-none rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  onChange={handleInputChange}
+                  className="border border-black rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
                 />
                 {errors.expiryDate && (
@@ -254,8 +257,8 @@ const Checkout = () => {
                   name="cvv"
                   placeholder="CVV"
                   value={formData.cvv}
-                  onChange={handleChange}
-                  className="border-solid border-black border-[1px] appearance-none rounded-full w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                  onChange={handleInputChange}
+                  className="border border-black rounded-full w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                   required
                 />
                 {errors.cvv && (
@@ -263,38 +266,36 @@ const Checkout = () => {
                 )}
               </div>
             </div>
-            <div className="mb-6">
-              <h3 className="text-lg font-bold mb-2">Order Summary</h3>
-              {orderSummary ? (
-                <>
-                  <ul>
-                    {orderSummary.items.map(({ id, name, price }) => (
-                      <li key={id}>
-                        {name} - {price} TND
-                      </li>
-                    ))}
-                  </ul>
-                  <h4>Total: {orderSummary.total} TND</h4>
-                </>
-              ) : (
-                <p>No items in the order.</p>
-              )}
-            </div>
-
-            <div className="flex items-center justify-between">
-              <Button content={"Place Order"} type={"submit"} />
-            </div>
           </div>
+
+          <div className="mb-6">
+            <h3 className="text-lg font-bold mb-2">Order Summary</h3>
+            {orderSummary ? (
+              <>
+                <ul>
+                  {orderSummary.items.map(({ id, name, price }) => (
+                    <li key={id}>
+                      {name} - {price} TND
+                    </li>
+                  ))}
+                </ul>
+                <h4>Total: {orderSummary.total} TND</h4>
+              </>
+            ) : (
+              <p>No items in the order.</p>
+            )}
+          </div>
+
+          <div className="flex items-center justify-between">
+            <Button content={"Place Order"} type={"submit"} />
+          </div>
+
+          {confirmationMessage && (
+            <p className="mt-4 text-center text-gray-700">
+              {confirmationMessage}
+            </p>
+          )}
         </form>
-
-        {/* Simple Order Confirmation Message */}
-        {confirmationMessage && (
-          <div className="absolute bg-[rgba(0,0,0,0.5)] top-0 bottom-0 right-0 w-screen h-screen">
-            <div className="confirmation-message h-28 w-1/2 m-auto mt-4 bg-white border-solid rounded-lg border-[1px] border-black text-green-500">
-              <h1 className="text-center py-5">{confirmationMessage}</h1>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
