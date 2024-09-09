@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addInfo } from "../store/userSlice";
-import { clearCart } from "../store/cartSlice";
 import { useNavigate } from "react-router-dom";
 import Button from "../componants/Button";
-
 const Checkout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -93,14 +90,16 @@ const Checkout = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="w-full max-w-md">
+    <div className="flex justify-center items-center px-2 ">
+      <div className="w-full  max-w-md sm:max-w-lg">
         <form
           onSubmit={handlePlaceOrder}
-          className="bg-white border border-black rounded-lg px-8 pt-6 pb-8 mb-4"
+          className="bg-white border border-black rounded-lg px-2 md:px-6 py-1 md:pt-6 md:pb-8 mb-4"
         >
-          <h2 className="text-center text-2xl font-bold mb-4">Checkout</h2>
-          <div className="grid grid-cols-2 gap-4">
+          <h2 className="text-center text-xl md:text-2xl font-bold mb-2 md:mb-4">
+            Checkout
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-4 gap-2">
             <div>
               <div className="mb-4">
                 <label

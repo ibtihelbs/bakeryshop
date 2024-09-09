@@ -6,30 +6,33 @@ const Singleproduct = ({ prod }) => {
   const minified = prod.image_url.replace("./images", "./images/mini");
 
   return (
-    <div className="p-1 border-solid border-[1px] border-black rounded-lg">
+    <div className="md:p-4 border-solid border-[1px] border-black rounded-lg shadow-lg">
       <Link
         to={`/single/${prod.id}`}
-        className="block w-full h-[300px]"
+        className="block w-full h-[200px] md:h-[250px] bg-cover bg-center rounded-lg"
         style={{
           backgroundImage: `url(${minified})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       >
         <img
           src={prod.image_url}
           alt={prod.name}
           loading="lazy"
-          className="w-full h-[300px] object-cover rounded-lg"
+          className="w-full h-full object-cover rounded-lg hidden md:block"
         />
       </Link>
 
-      <div className="flex justify-between p-4">
-        <div>
-          <h2>{prod.name}</h2>
-          <p className="text-xl">{prod.price}</p>
+      <div className="flex flex-col md:flex-row justify-between items-start p-4 mt-2">
+        <div className="flex flex-col md:w-3/4">
+          <h2 className="text-lg md:text-xl font-semibold">{prod.name}</h2>
+          <p className="text-base md:text-lg font-bold text-gray-800">
+            {prod.price}
+          </p>
         </div>
-        <AddCart v={prod} />
+
+        <div className="flex justify-end w-full md:ml-4 mt-2 md:mt-0">
+          <AddCart v={prod} />
+        </div>
       </div>
     </div>
   );

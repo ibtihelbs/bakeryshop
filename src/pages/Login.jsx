@@ -32,13 +32,15 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="w-full max-w-xs">
+    <div className="flex justify-center items-center h-screen px-4">
+      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md">
         <form
           onSubmit={handleSubmit}
-          className="bg-white border-solid border-black border-[1px] rounded-lg px-8 pt-6 pb-8 mb-4"
+          className="bg-white border border-black rounded-lg px-6 md:px-8 py-6 md:py-8 mb-4"
         >
-          <h2 className="text-center text-2xl font-bold mb-4">Login</h2>
+          <h2 className="text-center text-xl md:text-2xl font-bold mb-4">
+            Login
+          </h2>
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -53,7 +55,7 @@ const Login = () => {
               name="email"
               value={loginInfo.email}
               onChange={handleChange}
-              className="border-solid border-black border-[1px] appearance-none rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="border border-black rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
@@ -71,7 +73,7 @@ const Login = () => {
               name="username"
               value={loginInfo.username}
               onChange={handleChange}
-              className="border-solid border-black border-[1px] appearance-none rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="border border-black rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
@@ -89,12 +91,12 @@ const Login = () => {
               placeholder="Password"
               value={loginInfo.password}
               onChange={handleChange}
-              className="border-solid border-black border-[1px] appearance-none rounded-full w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="border border-black rounded-full w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
           <Link to="../Register">
-            <p className="text-[12px] mb-4 capitalize underline">
+            <p className="text-xs md:text-sm mb-4 capitalize underline text-center">
               Have no account yet? Click to Register
             </p>
           </Link>

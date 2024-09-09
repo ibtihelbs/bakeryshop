@@ -17,7 +17,7 @@
         "name": "Croissant au beurre",
         "description": "Un croissant feuilleté au beurre, parfait pour le petit déjeuner ou une collation.",
         "price": "2.50 TND",
-        "image_url": "./images/img1.jpeg",
+        "image_url": "/images/img1.jpeg",
         "category": "Viennoiseries",
         "sale": false,
         "tags": ["Petit déjeuner", "Classique", "Beurre"]
@@ -27,7 +27,7 @@
         "name": "Pain au chocolat",
         "description": "Un délicieux pain au chocolat avec une pâte feuilletée légère et du chocolat noir fondant.",
         "price": "3.00 TND",
-        "image_url": "./images/img2.jpeg",
+        "image_url": "/images/img2.jpeg",
         "category": "Viennoiseries",
         "sale": true,
         "tags": ["Chocolat", "Petit déjeuner", "Classique"]
@@ -37,7 +37,7 @@
         "name": "Éclair au café",
         "description": "Un éclair rempli de crème au café et recouvert d'un glaçage au café.",
         "price": "4.00 TND",
-        "image_url": "./images/img3.jpeg",
+        "image_url": "/images/img3.jpeg",
         "category": "Pâtisseries",
         "sale": false,
         "tags": ["Café", "Crème", "Dessert"]
@@ -47,7 +47,7 @@
         "name": "Tarte aux fruits",
         "description": "Une tarte délicate garnie de fruits frais et d'une crème pâtissière légère.",
         "price": "5.00 TND",
-        "image_url": "./images/img4.jpeg",
+        "image_url": "/images/img4.jpeg",
         "category": "Pâtisseries",
         "sale": true,
         "tags": ["Fruits", "Tarte", "Crème pâtissière"]
@@ -57,7 +57,7 @@
         "name": "Macaron assortis",
         "description": "Un assortiment de macarons aux saveurs variées, parfaits pour un cadeau ou un dessert raffiné.",
         "price": "6.50 TND",
-        "image_url": "./images/img5.jpeg",
+        "image_url": "/images/img5.jpeg",
         "category": "Pâtisseries",
         "sale": false,
         "tags": ["Macaron", "Cadeau", "Dessert"]
@@ -67,7 +67,7 @@
         "name": "Chausson aux pommes",
         "description": "Une pâte feuilletée croustillante remplie de compote de pommes douce et acidulée.",
         "price": "3.50 TND",
-        "image_url": "./images/img6.jpeg",
+        "image_url": "/images/img6.jpeg",
         "category": "Viennoiseries",
         "sale": true,
         "tags": ["Pommes", "Petit déjeuner", "Compote"]
@@ -77,7 +77,7 @@
         "name": "Tarte au citron meringuée",
         "description": "Une tarte au citron acidulée recouverte d'une meringue légère et dorée.",
         "price": "5.50 TND",
-        "image_url": "./images/img7.jpeg",
+        "image_url": "/images/img7.jpeg",
         "category": "Pâtisseries",
         "sale": false,
         "tags": ["Citron", "Tarte", "Meringue"]
@@ -87,7 +87,7 @@
         "name": "Pain aux raisins",
         "description": "Un pain moelleux parsemé de raisins secs et enroulé en spirale.",
         "price": "3.00 TND",
-        "image_url": "./images/img8.jpeg",
+        "image_url": "/images/img8.jpeg",
         "category": "Viennoiseries",
         "sale": false,
         "tags": ["Raisins", "Petit déjeuner", "Classique"]
@@ -97,7 +97,7 @@
         "name": "Tiramisu",
         "description": "Un dessert italien classique composé de couches de mascarpone, de café et de cacao.",
         "price": "6.00 TND",
-        "image_url": "./images/img2.jpeg",
+        "image_url": "/images/img2.jpeg",
         "category": "Desserts",
         "sale": true,
         "tags": ["Café", "Mascarpone", "Italien"]
@@ -107,7 +107,7 @@
         "name": "Gâteau au chocolat",
         "description": "Un gâteau moelleux au chocolat garni d'un glaçage riche et crémeux au chocolat.",
         "price": "7.00 TND",
-        "image_url": "./images/img1.jpeg",
+        "image_url": "/images/img1.jpeg",
         "category": "Desserts",
         "sale": false,
         "tags": ["Chocolat", "Gâteau", "Dessert"]

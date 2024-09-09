@@ -14,7 +14,7 @@ const AddCart = ({ v }) => {
           })
         );
       }}
-      className="border-solid border-[1px] border-black py-4 px-8 rounded-full hover:bg-red-400  "
+      className="border-solid border-[1px] px-2 py-1 text-[16px] border-black md:py-4 md:px-8 rounded-full hover:bg-red-400  "
     >
       add to cart
     </button>

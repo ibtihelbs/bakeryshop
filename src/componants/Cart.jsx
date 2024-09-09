@@ -17,7 +17,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="absolute w-[300px] p-5 flex flex-col gap-4 min-h-8 bg-white right-5 border-black border-solid border-[1px] rounded-lg">
+    <div className="absolute z-10 w-[300px] p-5 flex flex-col gap-4 min-h-8 bg-white right-5 border-black border-solid border-[1px] rounded-lg">
       {totalPrice !== 0 ? (
         <>
           {cart.map(({ id, image_url, name, price }) => (

@@ -4,16 +4,17 @@ const Account = () => {
   console.log(items);
 
   return (
-    <main className="px-10 flex flex-wrap gap-4">
-      <div className="grid gap-4">
+    <main className="px-4 sm:px-6 md:px-10 flex flex-col lg:flex-row flex-wrap gap-4">
+      {/* Orders Section */}
+      <div className="grid gap-4 w-full lg:w-2/3">
         {items.map((singleOrder, index) => (
           <div
-            className="flex flex-col gap-2 p-4 border border-solid rounded-lg border-black "
+            className="flex flex-col gap-2 p-4 border border-solid rounded-lg border-black"
             key={index}
           >
             <div className="grid grid-rows-2 gap-4">
               {singleOrder.items.map((v, i) => (
-                <div className="flex gap-4 p-2" key={i}>
+                <div className="flex flex-col sm:flex-row gap-4 p-2" key={i}>
                   <img
                     className="w-24 h-24 object-cover rounded-lg"
                     src={v.image_url}
@@ -34,11 +35,13 @@ const Account = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col gap-4">
+
+      {/* User Info Section */}
+      <div className="flex flex-col gap-4 w-full lg:w-1/3">
         {info.map((v, index) => (
           <div
             key={index}
-            className="mb-4 w-[450px] h-[250px] p-3 border-black border rounded-lg border-solid"
+            className="mb-4 w-full p-3 border-black border rounded-lg border-solid"
           >
             {Object.entries(v).map(([key, value]) => (
               <div key={key} className="flex gap-2">
