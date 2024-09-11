@@ -76,7 +76,7 @@ const Home = () => {
             <img
               src="./no-bg/2.png"
               alt="croissant"
-              className="scale-[1.75] md:translate-x-1/2"
+              className="scale-[1.75] translate-x-1/2"
             />
           </picture>
           <picture>
@@ -86,7 +86,7 @@ const Home = () => {
             <img
               src="./no-bg/3.png"
               alt="croissant"
-              className="scale-[1.75] md:translate-y-1/2"
+              className="scale-[1.75] translate-y-1/2"
             />
           </picture>
           <picture>
@@ -96,7 +96,7 @@ const Home = () => {
             <img
               src="./no-bg/4.png"
               alt="croissant"
-              className="scale-[1.75] md:translate-y-1/2"
+              className="scale-[1.75] translate-y-1/2"
             />
           </picture>
         </div>
