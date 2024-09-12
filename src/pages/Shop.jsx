@@ -3,7 +3,9 @@ import Products from "../componants/Products";
 const Shop = () => {
   return (
     <div>
-      <H1 content={"Our Shop"} align={"center"} />
+      <div className="py-4">
+        <H1 content={"Our Shop"} align={"center"} />
+      </div>
       <Products start={0} end={-1} />
     </div>
   );
