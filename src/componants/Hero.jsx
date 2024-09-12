@@ -19,7 +19,7 @@ const Hero = () => {
           alt="hero"
           className="rounded-3xl object-cover h-full w-full border-black border-[5px] p-1 border-double"
         />
-        <div className="text-white max-w-[500px] text-center font-bold absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  px-4">
+        <div className="text-white md:w-[500px] w-4/5 text-center font-bold absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  px-4">
           <h2 className="text-lg md:text-2xl">Welcome to Sweet Dreams</h2>
           <H1 content={"Where Your Cravings Come to Life"} />
           <h2 className="text-sm md:text-xl text-right md:mt-2">
