@@ -23,7 +23,7 @@ const Home = () => {
           <XlText content={"Life’s Short, Eat the Cake First"} />
         </InfiniteSlider>
 
-        <div className="flex flex-col md:flex-row gap-4 max-w-[800px] m-auto">
+        <div className=" overflow-x-hidden flex flex-col md:flex-row gap-4 max-w-[800px] m-auto">
           <div>
             <h2 className="text-xl md:text-2xl">
               We believe in living life with a little extra butter, a sprinkle
