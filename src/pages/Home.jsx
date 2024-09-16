@@ -7,6 +7,7 @@ import XlText from "../componants/XlText";
 import Paragraph from "../componants/Paragraph";
 import { InfiniteSlider } from "../componants/InfiniteSlider";
 import H1 from "../componants/H1";
+import CircularSpinner from "../componants/CircularSpinner";
 
 const Home = () => {
   const { scrollYProgress } = useScroll();
@@ -68,6 +69,7 @@ const Home = () => {
 
           <div className="row-span-2 col-span-3 self-center p-4">
             <H1 content={"cakes so rich your bank account might get jealous"} />
+
             <Paragraph
               content={`We've got everything you need to
           make that cheat day worth it. And don’t even get us started on our
