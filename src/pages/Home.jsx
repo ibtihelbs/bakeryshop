@@ -7,7 +7,6 @@ import XlText from "../componants/XlText";
 import Paragraph from "../componants/Paragraph";
 import { InfiniteSlider } from "../componants/InfiniteSlider";
 import H1 from "../componants/H1";
-import CircularSpinner from "../componants/CircularSpinner";
 
 const Home = () => {
   const { scrollYProgress } = useScroll();
@@ -18,10 +17,12 @@ const Home = () => {
       <Hero />
 
       <div>
-        <InfiniteSlider>
-          <XlText content={"Life’s Short, Eat the Cake First"} />
-          <XlText content={"Life’s Short, Eat the Cake First"} />
-        </InfiniteSlider>
+        <div className="py-8">
+          <InfiniteSlider>
+            <XlText content={"Life’s Short, Eat the Cake First"} />
+            <XlText content={"Life’s Short, Eat the Cake First"} />
+          </InfiniteSlider>
+        </div>
 
         <div className=" overflow-x-hidden flex flex-col md:flex-row gap-4 max-w-[800px] m-auto">
           <div>

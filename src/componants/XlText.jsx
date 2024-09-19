@@ -2,7 +2,7 @@ import React from "react";
 
 const XlText = ({ content }) => {
   return (
-    <h1 className=" text-6xl tracking-tighter md:leading-loose ">
+    <h1 className=" md:text-[92px] text-4xl -tracking-[10] leading-[.8] ">
       {" "}
       {content}{" "}
     </h1>
