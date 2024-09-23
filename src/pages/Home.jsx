@@ -1,6 +1,5 @@
 import Contact from "../componants/Contact";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Hero from "../componants/Hero";
 import Products from "../componants/Products";
 import More from "../componants/More";
 import XlText from "../componants/XlText";

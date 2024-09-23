@@ -14,24 +14,24 @@ const Hero2 = () => {
           style={"max-w-96 "}
           content={`You’re here because your cravings won, and your doctor hasn’t caught on yet. But hey, who’s counting pastries anyway?`}
         />
-        <div className=" relative cursor-pointer  h-[100px] w-[100px] border-black border border-solid rounded-[50%] ">
-          <img
-            src="arrow.png"
-            alt="arrow"
-            className=" w-10 absolute  -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
-          />
-          <CircularSpinner
-            width={100}
-            textStyle={{ fontWeight: "bolder", fontFamily: "Yeseva One" }}
-          >
-            <Link
-              className=" py-2 px-4 mt-4 inline-block md:mt-6 rounded-full border border-solid border-white hover:bg-white hover:text-black transition duration-300 ease-in-out"
-              to={"/shop"}
+        <Link
+          className=" py-2 px-4 mt-4 inline-block md:mt-6 rounded-full border border-solid border-white hover:bg-white hover:text-black transition duration-300 ease-in-out"
+          to={"/shop"}
+        >
+          <div className=" relative cursor-pointer  h-[100px] w-[100px] border-black border border-solid rounded-[50%] ">
+            <img
+              src="arrow.png"
+              alt="arrow"
+              className=" w-10 absolute  -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
+            />
+            <CircularSpinner
+              width={100}
+              textStyle={{ fontWeight: "bolder", fontFamily: "Yeseva One" }}
             >
-              BUY NOW
-            </Link>
-          </CircularSpinner>
-        </div>
+              <h1>BUY NOW</h1>
+            </CircularSpinner>
+          </div>
+        </Link>
       </div>
       <img
         src="./hero.jpg"

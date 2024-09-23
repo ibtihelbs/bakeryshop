@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const CircularSpinner = ({ children, width, textStyle, degree }) => {
   const textEl = children.props.children || children.props.content;
   const toArr = textEl.split("");
-
+  console.log(children);
   const fraction = (degree || 180) / toArr.length;
   return (
     <motion.div
@@ -31,7 +31,6 @@ const CircularSpinner = ({ children, width, textStyle, degree }) => {
               left: "50%",
               color: "inherit", // Adjust text color as needed
               ...textStyle,
-             
             }}
           >
             {v}
