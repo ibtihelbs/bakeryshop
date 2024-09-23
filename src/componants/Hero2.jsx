@@ -6,7 +6,7 @@ const Hero2 = () => {
   return (
     <section
       id="hero"
-      className="md:mt-16 mt-4  w-[96%] m-auto  flex flex-col gap-4 "
+      className="md:mt-8 mt-4  w-[96%] m-auto  flex flex-col gap-4 "
     >
       <XxxlText content={"SWEET DREAMS"} style={"underline"} />
       <div className="flex justify-between  items-start order-2 md:order-none ">
