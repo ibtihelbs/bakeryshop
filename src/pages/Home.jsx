@@ -7,6 +7,7 @@ import XlText from "../componants/XlText";
 import Paragraph from "../componants/Paragraph";
 import { InfiniteSlider } from "../componants/InfiniteSlider";
 import H1 from "../componants/H1";
+import Hero2 from "../componants/Hero2";
 
 const Home = () => {
   const { scrollYProgress } = useScroll();
@@ -14,8 +15,7 @@ const Home = () => {
 
   return (
     <div className="px-4 md:px-10">
-      <Hero />
-
+      <Hero2 />
       <div>
         <div className="py-8">
           <InfiniteSlider>
@@ -25,12 +25,13 @@ const Home = () => {
         </div>
 
         <div className=" overflow-x-hidden flex flex-col md:flex-row gap-4 max-w-[800px] m-auto">
-          <div>
-            <h2 className="text-xl md:text-2xl">
+          <div className="grid gap-3">
+            <h2 className=" text-xl leading-6 md:text-2xl">
               We believe in living life with a little extra butter, a sprinkle
               of sarcasm, and a dash of "why not?"
             </h2>
             <Paragraph
+              style={"hidden md:block"}
               content={`We won’t tell you that our pastries
           are the best in town (even though they totally are), but we will say
           that if you miss out, your taste buds might never forgive you.

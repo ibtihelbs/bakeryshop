@@ -1,5 +1,4 @@
 import CircularSpinner from "./CircularSpinner";
-import H1 from "./H1";
 import Paragraph from "./Paragraph";
 import { Link } from "react-router-dom";
 import XlText from "./XlText";

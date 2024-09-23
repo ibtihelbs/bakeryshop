@@ -31,6 +31,7 @@ const CircularSpinner = ({ children, width, textStyle, degree }) => {
               left: "50%",
               color: "inherit", // Adjust text color as needed
               ...textStyle,
+             
             }}
           >
             {v}

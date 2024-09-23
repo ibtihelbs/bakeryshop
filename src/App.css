@@ -6,11 +6,9 @@ body {
   font-family: system-ui, sans-serif;
   overflow-x: hidden;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1 {
   font-family: "Yeseva One", serif;
+}
+.font-system {
+  font-family: system-ui, sans-serif !important;
 }
