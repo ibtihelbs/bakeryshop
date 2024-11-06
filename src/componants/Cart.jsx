@@ -28,7 +28,8 @@ const Cart = () => {
               <img
                 src={image_url}
                 alt={name}
-                className="w-10 h-10 rounded-lg"
+                className="w-10 h-10 bg-amber-800 rounded-lg"
+                loading="lazy"
               />
               <div>
                 <h1>{name}</h1>

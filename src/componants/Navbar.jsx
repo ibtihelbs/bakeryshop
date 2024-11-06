@@ -4,9 +4,7 @@ import { useSelector } from "react-redux";
 
 const Navbar = ({ setIsOpen, isOpen }) => {
   const links = [
-    { name: "Home", link: "/" },
     { name: "Shop", link: "/Shop" },
-    { name: "Contact", link: "../#contact" },
   ];
 
   const [user, setUser] = useState(false);

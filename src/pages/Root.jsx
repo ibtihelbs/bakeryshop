@@ -7,6 +7,7 @@ const Root = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
+      <div className="noise"></div>
       <Navbar setIsOpen={setIsOpen} isOpen={isOpen} />
       {isOpen == true ? <Cart /> : ""}
       <Outlet />
